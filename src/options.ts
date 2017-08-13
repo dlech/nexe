@@ -104,7 +104,8 @@ const alias = {
   l: 'loglevel'
 }
 const argv = parseArgv(process.argv, { alias, default: defaults })
-const help = `
+const help =
+  `
 nexe --help              CLI OPTIONS
 
   -b   --build                              -- build from source
@@ -131,7 +132,7 @@ nexe --help              CLI OPTIONS
        --silent                             -- disable logging
        --verbose                            -- set logging to verbose
 
-       -* variable key name                 * option can be used more than once`.trim()
+       -* variable key name                 * option can be used more than once`.trim() + EOL
 
 function flattenFilter(...args: any[]): string[] {
   return ([] as string[]).concat(...args).filter(x => x)
